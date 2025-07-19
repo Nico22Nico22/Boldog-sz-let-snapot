@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Drágám🥰" />
+  <meta property="og:description" content="Boldog szöletésnapot❣️" />
+  <meta property="og:image" content="https://i.postimg.cc/PNsZwgw5/borito.jpg" />
+  <meta property="og:url" content="https://nico22nico22.github.io/Boldog-sz-let-snapot/" />
+  <title>Bogim, Drága Cuta 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #fff0f5;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow-x: hidden;
+      color: #a00057;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffb6c1;
+      color: white;
+      font-size: 2.8rem;
+      font-weight: bold;
+      border-bottom: 5px dashed #fff;
+      width: 100%;
+      max-width: 1050px;
+      margin-bottom: 1rem;
+      user-select: none;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      width: 100%;
+      max-width: 900px;
+      padding: 0 1rem;
+    }
+    section.person {
+      background: #fffafc;
+      border: 3px dotted #ffc0cb;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 0 15px #ffccdd;
+      text-align: center;
+      flex: 1;
+      min-width: 280px;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    section.person img {
+      width: 180px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 15px #ffb6c1;
+      object-fit: cover;
+    }
+    section.person h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #e75480;
+    }
+    section.person p {
+      font-size: 1.2rem;
+      color: #b20052;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+    #giftSection {
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 900px;
+      background: #fffafc;
+      border: 3px dotted #ffc0cb;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 0 15px #ffccdd;
+      text-align: center;
+      user-select: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .cute-btn {
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      padding: 1rem 2.4rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s;
+      box-shadow: 0 0 10px #ff85b9;
+      user-select: none;
+    }
+    .cute-btn:hover, .cute-btn:focus {
+      background-color: #ff1493;
+      transform: scale(1.1);
+      outline: none;
+      box-shadow: 0 0 20px #ff1493;
+    }
+    #messageBox {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #ff1493;
+      min-height: 2.5em;
+      font-weight: 600;
+      user-select: text;
+    }
+    #letterSection {
+      margin-top: 1rem;
+      background: #ffe6f2;
+      border-radius: 15px;
+      padding: 1rem 1.5rem;
+      max-width: 600px;
+      max-height: 300px;
+      overflow-y: auto;
+      color: #b20052;
+      font-size: 1rem;
+      line-height: 1.5;
+      display: none;
+      user-select: text;
+      box-shadow: 0 0 15px #ffb6c1;
+    }
+    #audioPlayerWrapper {
+      margin-top: 2rem;
+      background: #ffe6f2;
+      border-radius: 15px;
+      padding: 1rem 1.5rem;
+      max-width: 600px;
+      box-shadow: 0 0 15px #ffb6c1;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    audio {
+      width: 280px;
+      border-radius: 10px;
+      outline: none;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+      filter: drop-shadow(0 0 6px pink);
+    }
+    button.audio-control-btn {
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      width: 42px;
+      height: 42px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px #ff85b9;
+    }
+    button.audio-control-btn:hover, button.audio-control-btn:focus {
+      background-color: #ff1493;
+      transform: scale(1.15);
+      outline: none;
+      box-shadow: 0 0 20px #ff1493;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://emojicdn.elk.sh/❤️');
+      background-size: contain;
+      animation: fall 8s linear infinite;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 6px #ff69b4);
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    .tulips {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: right;
+      z-index: 10;
+      user-select: none;
+      pointer-events: none;
+      background: transparent;
+      padding-bottom: 200px;
+    }
+    .tulips img {
+      width: 350px;
+      margin: 0 5px;
+      user-select: none;
+      pointer-events: none;
+    }
+    #surprisePopupOverlay {
+      position: fixed;
+      top: 0; left: 0; right:0; bottom: 0;
+      background-color: rgba(255, 182, 193, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 1rem;
+      user-select: none;
+    }
+    #surprisePopupOverlay.show {
+      display: flex;
+    }
+    #surprisePopup {
+      background: #fff0f5;
+      border: 5px solid #ff69b4;
+      border-radius: 25px;
+      padding: 2rem;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 0 30px #ff69b4;
+      text-align: center;
+      color: #b20052;
+      user-select: text;
+      position: relative;
+    }
+    #surprisePopup h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff1493;
+    }
+    #surprisePopup p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+    #closeSurpriseBtn {
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s;
+      box-shadow: 0 0 10px #ff85b9;
+      user-select: none;
+    }
+    #closeSurpriseBtn:hover, #closeSurpriseBtn:focus {
+      background-color: #ff1493;
+      transform: scale(1.1);
+      outline: none;
+      box-shadow: 0 0 20px #ff1493;
+    }
+    .cute-anim-container {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      margin: 0 auto;
+      user-select: none;
+    }
+    .cute-anim-item {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.85;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      user-select: none;
+    }
+    .heart-shape {
+      width: 16px;
+      height: 16px;
+      background-image: url('https://emojicdn.elk.sh/❤️');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .bubble {
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle at 30% 30%, #ffb6c1, #ff69b4);
+      filter: drop-shadow(0 0 3px #ff69b4);
+    }
+    .star {
+      width: 18px;
+      height: 18px;
+      background: #ff1493;
+      clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%,
+        2% 35%, 39% 35%
+      );
+      filter: drop-shadow(0 0 6px #ff1493);
+    }
+    @keyframes floatUpDownSmall {
+      0%, 100% { transform: translateY(0); opacity: 0.85;}
+      50% { transform: translateY(-8px); opacity: 1;}
+    }
+    @keyframes floatLeftRightSmall {
+      0%, 100% { transform: translateX(0); opacity: 0.85;}
+      50% { transform: translateX(8px); opacity: 1;}
+    }
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      section.person {
+        width: 90%;
+        max-width: 350px;
+        margin-bottom: 1rem;
+      }
+      #giftSection {
+        max-width: 90%;
+        margin-top: 1rem;
+      }
+      #audioPlayerWrapper {
+        max-width: 90%;
+        flex-wrap: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="borito.jpg" alt="Borító kép" style="width:1px; height:1px; opacity:0;" />
+  <header>🌸 Drága Bogim, Boldog születésnapot❣️ 🌸</header>
+
+  <main>
+    <section class="person" id="nicoSection" aria-label="Nico profil">
+      <img src="kepek/enlol.png" alt="Nico" />
+      <h2>Nico💝</h2>
+      <p>Csak egy srác, aki imád és bármit megtenne érted!🥰</p>
+    </section>
+
+    <section class="person" id="cutiSection" aria-label="Bogim profil">
+      <img src="kepek/mylove.jpg" alt="Bogim" />
+      <h2>Bogim 💕</h2>
+      <p>A leggyönyörűbb lány a világon, akinek ma van a szülinapja 🥰🎂💐</p>
+    </section>
+  </main>
+
+  <section id="giftSection" aria-label="Ajándék funkciók">
+    <button class="cute-btn" id="photosBtn">🥰 Közös képek</button>
+    <button class="cute-btn" id="musicBtn">🎵 Zene</button>
+    <button class="cute-btn" id="letterBtn">💌 Levél neked</button>
+    <button class="cute-btn" id="surpriseBtn">💝 Meglepetés!</button>
+
+    <div id="messageBox" role="region" aria-live="polite" aria-atomic="true"></div>
+    <div id="letterSection" tabindex="0" aria-label="Levél neked">
+      <p>
+        Drága Bogim!<br><br>
+        Amikor rád gondolok, a világ minden csodája összeolvad egyetlen ragyogó pillanatban. Az a mosolyod, ami mindig felmelegíti a lelkem, az a szív, ami annyi szeretetet ad nekem nap mint nap.<br><br>
+        Ez a nap különleges, mert a te születésnapod, és szeretném, hogy érezd mennyire fontos nekem.<br><br>
+        Köszönöm, hogy vagy, hogy szeretsz, hogy mindig mellettem állsz.<br><br>
+        Szeretlek örökké,<br>
+        Nico 💖🥰
+      </p>
+    </div>
+  </section>
+
+  <div id="audioPlayerWrapper" aria-label="Zene vezérlő">
+    <audio id="musicPlayer" controls loop preload="auto">
+      <source src="zene/in-this-shirt.mp3" type="audio/mpeg" />
+      A böngésződ nem támogatja az audio elemet.
+    </audio>
+    <button class="audio-control-btn" id="back15" aria-label="15 másodperc vissza">⏪</button>
+    <button class="audio-control-btn" id="playPause" aria-label="Lejátszás / Szünet">▶️</button>
+    <button class="audio-control-btn" id="forward15" aria-label="15 másodperc előre">⏩</button>
+  </div>
+
+  <div class="hearts" aria-hidden="true"></div>
+
+  <div class="tulips" aria-hidden="true">
+    <img src="" alt="" />
+  </div>
+
+  <div id="surprisePopupOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div id="surprisePopup">
+      <h2>🎉 Meglepiiiii😘 🎉</h2>
+
+      <p>
+        Tudtad, hogy minden nap egy új esély a boldogságra?<br>
+        Ez a nap pedig csak a tiéd – tele szeretettel és varázslattal!<br>
+        Remélem, ez a kis oldal mindig mosolyt csal az arcodra, és érezd, hogy mennyire szeretlek!<br><br>
+
+        Örülök, hogy vagy nekem!<br>
+        Sok-sok puszi😘,<br>
+        Nico 💖🥰
+      </p>
+
+   
+
+      <button id="closeSurpriseBtn">Bezárás</button>
+    </div>
+  </div>
+
+  <script>
+    const hearts = document.querySelector('.hearts');
+    for (let i = 0; i < 50; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heart.style.opacity = 0.7 + Math.random() * 0.3;
+      hearts.appendChild(heart);
+    }
+
+    const photosBtn = document.getElementById("photosBtn");
+    const musicBtn = document.getElementById("musicBtn");
+    const letterBtn = document.getElementById("letterBtn");
+    const surpriseBtn = document.getElementById("surpriseBtn");
+
+    const messageBox = document.getElementById("messageBox");
+    const letterSection = document.getElementById("letterSection");
+    const audioWrapper = document.getElementById("audioPlayerWrapper");
+    const musicPlayer = document.getElementById("musicPlayer");
+
+    musicPlayer.volume = 0.6;
+    musicPlayer.play().catch(e => {  });
+
+    const playPauseBtn = document.getElementById("playPause");
+    const back15Btn = document.getElementById("back15");
+    const forward15Btn = document.getElementById("forward15");
+
+    playPauseBtn.addEventListener("click", () => {
+      if (musicPlayer.paused) {
+        musicPlayer.play();
+        playPauseBtn.textContent = "⏸️";
+      } else {
+        musicPlayer.pause();
+        playPauseBtn.textContent = "▶️";
+      }
+    });
+
+    back15Btn.addEventListener("click", () => {
+      musicPlayer.currentTime = Math.max(0, musicPlayer.currentTime - 15);
+    });
+
+    forward15Btn.addEventListener("click", () => {
+      musicPlayer.currentTime = Math.min(musicPlayer.duration, musicPlayer.currentTime + 15);
+    });
+
+    if (musicPlayer.paused) {
+      playPauseBtn.textContent = "▶️";
+    } else {
+      playPauseBtn.textContent = "⏸️";
+    }
+
+
+    photosBtn.addEventListener("click", () => {
+      messageBox.textContent = "Még nincs, de majd lesz Életem❣️🥰";
+      letterSection.style.display = "none";
+      audioWrapper.style.display = "none";
+    });
+
+    musicBtn.addEventListener("click", () => {
+      messageBox.textContent = "";
+      letterSection.style.display = "none";
+      audioWrapper.style.display = "flex";
+    });
+
+    letterBtn.addEventListener("click", () => {
+      messageBox.textContent = "";
+      letterSection.style.display = "block";
+      audioWrapper.style.display = "none";
+    });
+
+
+    const surprisePopupOverlay = document.getElementById("surprisePopupOverlay");
+    const closeSurpriseBtn = document.getElementById("closeSurpriseBtn");
+    const animContainer = document.querySelector(".cute-anim-container");
+
+    const letterPoints = {
+      L: [
+        {x:10, y:10, type:'heart-shape'},
+        {x:10, y:25, type:'bubble'},
+        {x:10, y:40, type:'star'},
+        {x:10, y:55, type:'heart-shape'},
+        {x:25, y:55, type:'bubble'},
+        {x:40, y:55, type:'star'},
+        {x:55, y:55, type:'heart-shape'},
+      ],
+      O: [
+        {x:75, y:25, type:'bubble'},
+        {x:85, y:10, type:'star'},
+        {x:95, y:25, type:'heart-shape'},
+        {x:95, y:45, type:'bubble'},
+        {x:85, y:60, type:'star'},
+        {x:75, y:45, type:'heart-shape'},
+        {x:85, y:35, type:'bubble'},
+      ],
+      V: [
+        {x:115, y:10, type:'star'},
+        {x:125, y:55, type:'heart-shape'},
+        {x:135, y:55, type:'bubble'},
+        {x:145, y:55, type:'star'},
+        {x:155, y:10, type:'heart-shape'},
+      ],
+      E: [
+        {x:175, y:10, type:'bubble'},
+        {x:175, y:25, type:'star'},
+        {x:175, y:40, type:'heart-shape'},
+        {x:175, y:55, type:'bubble'},
+        {x:190, y:10, type:'star'},
+        {x:205, y:10, type:'heart-shape'},
+        {x:190, y:35, type:'bubble'},
+        {x:205, y:35, type:'star'},
+        {x:190, y:55, type:'heart-shape'},
+        {x:205, y:55, type:'bubble'},
+      ]
+    };
+
+    function clearCuteAnim() {
+      animContainer.innerHTML = '';
+    }
+
+    function createLoveAnim() {
+      clearCuteAnim();
+      const allPoints = [...letterPoints.L, ...letterPoints.O, ...letterPoints.V, ...letterPoints.E];
+      allPoints.forEach((point) => {
+        const el = document.createElement('div');
+        el.classList.add('cute-anim-item', point.type);
+        el.style.left = point.x + '%';
+        el.style.top = point.y + '%';
+
+        const size = 14 + Math.random() * 4;
+        el.style.width = size + 'px';
+        el.style.height = size + 'px';
+
+        const animationName = Math.random() > 0.5 ? 'floatUpDownSmall' : 'floatLeftRightSmall';
+        el.style.animationName = animationName;
+        el.style.animationDuration = (3 + Math.random() * 3) + 's';
+        el.style.animationDelay = (Math.random() * 3) + 's';
+
+        animContainer.appendChild(el);
+      });
+    }
+
+    surpriseBtn.addEventListener("click", () => {
+      surprisePopupOverlay.classList.add("show");
+      surprisePopupOverlay.setAttribute("aria-hidden", "false");
+      createLoveAnim();
+      messageBox.textContent = "";
+      letterSection.style.display = "none";
+      audioWrapper.style.display = "none";
+    });
+
+    closeSurpriseBtn.addEventListener("click", () => {
+      surprisePopupOverlay.classList.remove("show");
+      surprisePopupOverlay.setAttribute("aria-hidden", "true");
+      clearCuteAnim();
+    });
+  </script>
+</body>
+</html>
